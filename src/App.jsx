@@ -6,8 +6,7 @@ import Header from './components/Header/Header';
 import { UserProvider } from './context/UserContext';
 import SignUp from './components/Signup/SignUp';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
-import CreateProfile from './components/CreateProfile';
-import Profile from './views/Profile/Profile';
+import UserProfile from './views/Profile/UserProfile';
 
 export default function App() {
   return (
@@ -23,11 +22,9 @@ export default function App() {
           <Route path="/signup">
             <SignUp />
           </Route>
-          <PrivateRoute>
+          <PrivateRoute path="/userprofile">
             <Header />
-          </PrivateRoute>
-          <PrivateRoute path="/profile">
-            <Profile />
+            <UserProfile />
           </PrivateRoute>
         </Switch>
       </BrowserRouter>

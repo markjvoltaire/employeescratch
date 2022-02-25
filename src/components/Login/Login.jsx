@@ -11,7 +11,7 @@ export default function Login() {
   const signUserIn = async (e) => {
     e.preventDefault();
     await signInUser(email, password);
-    history.push('/profile');
+    history.push('/userprofile');
   };
 
   return (
