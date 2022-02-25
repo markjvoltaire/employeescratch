@@ -13,9 +13,6 @@ export default function App() {
   return (
     <UserProvider>
       <BrowserRouter>
-        <PrivateRoute>
-          <Header />
-        </PrivateRoute>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -26,6 +23,9 @@ export default function App() {
           <Route path="/signup">
             <SignUp />
           </Route>
+          <PrivateRoute>
+            <Header />
+          </PrivateRoute>
           <PrivateRoute path="/profile">
             <Profile />
           </PrivateRoute>

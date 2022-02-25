@@ -15,7 +15,6 @@ export default function Header() {
   return (
     <div>
       <button onClick={signUserOut}>Signout</button>
-      {user.email ? <p>Welcome Back {user.email}</p> : <p>Welcome Guest</p>}
     </div>
   );
 }

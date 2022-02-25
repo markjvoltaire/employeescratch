@@ -10,7 +10,7 @@ export default function SignUp() {
   const signUserUp = async (e) => {
     e.preventDefault();
     await signUpUser(newEmail, newPassword);
-    history.push('/');
+    history.push('/profile');
   };
 
   return (
