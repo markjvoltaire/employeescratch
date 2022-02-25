@@ -7,27 +7,34 @@ import { UserProvider } from './context/UserContext';
 import SignUp from './components/Signup/SignUp';
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute';
 import UserProfile from './views/Profile/UserProfile';
+import { ProfileProvider } from './context/ProfileContext';
+import CreateProfile from './views/CreateProfile/CreateProfile';
 
 export default function App() {
   return (
     <UserProvider>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <PrivateRoute path="/userprofile">
-            <Header />
-            <UserProfile />
-          </PrivateRoute>
-        </Switch>
-      </BrowserRouter>
+      <ProfileProvider>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
+            </Route>
+            <PrivateRoute path="/userprofile">
+              <Header />
+              <UserProfile />
+            </PrivateRoute>
+            <PrivateRoute path="/createprofile">
+              <CreateProfile />
+            </PrivateRoute>
+          </Switch>
+        </BrowserRouter>
+      </ProfileProvider>
     </UserProvider>
   );
 }
